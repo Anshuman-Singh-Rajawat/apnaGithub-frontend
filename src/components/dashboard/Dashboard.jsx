@@ -13,9 +13,7 @@ function Dashboard() {
 
     const fetchRepositories = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
-        );
+        const response = await fetch(`3.26.214.24:3002/repo/user/${userId}`);
         const data = await response.json();
         setRepositories(data.repos);
       } catch (err) {
@@ -25,7 +23,7 @@ function Dashboard() {
 
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch("http://localhost:3000/repo/all");
+        const response = await fetch("3.26.214.24:3002/repo/all");
         const data = await response.json();
         setSuggestedRepositories(data);
       } catch (err) {
@@ -42,7 +40,7 @@ function Dashboard() {
       setSearchResults(repositories);
     } else {
       const filteredRepos = repositories.filter((repo) =>
-        repo.name.toLowerCase().includes(searchQuery.toLowerCase())
+        repo.name.toLowerCase().includes(searchQuery.toLowerCase()),
       );
 
       setSearchResults(filteredRepos);

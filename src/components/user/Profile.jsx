@@ -17,7 +17,7 @@ const Profile = () => {
     const fetchUserDetails = async () => {
       const userId = localStorage.getItem("userId");
       const response = await axios.get(
-        `http://localhost:3000/userProfile/${userId}`
+        `3.26.214.24:3002/userProfile/${userId}`,
       );
       setUserDetails(response.data);
     };
